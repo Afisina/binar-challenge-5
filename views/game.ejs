@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/game.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <title>Traditional Game</title>
+  </head>
+  <body>
+    <div class="player">
+      <h2>Player</h2>
+      <div class="option" onclick="pickOption(batu)">
+        <img src="./assets/batu.png" class="p-batu" id="batu" />
+      </div>
+      <div class="option" onclick="pickOption(kertas)">
+        <img src="./assets/kertas.png" class="p-kertas" id="kertas" />
+      </div>
+      <div class="option" onclick="pickOption(gunting)">
+        <img src="./assets/gunting.png" class="p-gunting" id="gunting" />
+      </div>
+    </div>
+    <div class="vs">
+      <h2 id="inGame"></h2>
+      <h4 id="result"></h4>
+    </div>
+    <div class="com">
+      <h2>Computer</h2>
+      <div class="option" onclick="pickOption(batu)">
+        <img src="./assets/batu.png" class="c-batu" id="batu" />
+      </div>
+      <div class="option" onclick="pickOption(kertas)">
+        <img src="./assets/kertas.png" class="c-kertas" id="kertas" />
+      </div>
+      <div class="option" onclick="pickOption(gunting)">
+        <img src="./assets/gunting.png" class="c-gunting" id="gunting" />
+      </div>
+    </div>
+
+    <script>
+      class Start {
+        constructor() {
+          this.playerName = "Player";
+          this.comName = "Computer";
+          this.playerOption;
+          this.comOption;
+          this.winner = "";
+        }
+
+        get getcomOption() {
+          return this.comOption;
+        }
+
+        set setcomOption(option) {
+          this.comOption = option;
+        }
+
+        get getPlayerOption() {
+          return this.playerOption;
+        }
+
+        set setPlayerOption(option) {
+          this.playerOption = option;
+        }
+
+        comBrain() {
+          const option = [kertas, gunting, batu];
+          const com = option[Math.floor(Math.random() * option.length)];
+          return com;
+        }
+
+        winCalculation() {
+          if (this.comOption == kertas && this.playerOption == gunting) {
+            return (this.winner = this.playerName);
+          } else if (this.comOption == kertas && this.playerOption == batu) {
+            return (this.winner = this.comName);
+          } else if (this.comOption == gunting && this.playerOption == kertas) {
+            return (this.winner = this.comName);
+          } else if (this.comOption == gunting && this.playerOption == batu) {
+            return (this.winner = this.playerName);
+          } else if (this.comOption == batu && this.playerOption == kertas) {
+            return (this.winner = this.playerName);
+          } else if (this.comOption == batu && this.playerOption == gunting) {
+            return (this.winner = this.comName);
+          } else {
+            return (this.winner = "SERI");
+          }
+        }
+
+        matchResult() {
+          if (this.winner != "SERI") {
+            return `${this.winner} MENANG!`;
+          } else {
+            return `${this.winner}, GA ADA YG MENANG 🤪`;
+          }
+        }
+      }
+
+      function pickOption(params) {
+        const start = new Start();
+        start.setPlayerOption = params;
+        start.setcomOption = start.comBrain();
+        start.winCalculation();
+
+        const inGame = document.getElementById("inGame");
+        const result = document.getElementById("result");
+
+        inGame.textContent = "...";
+        result.textContent = "...";
+
+        setTimeout(() => {
+          inGame.innerHTML = `${start.getPlayerOption[0].outerHTML} VS ${start.getcomOption[0].outerHTML}`;
+          result.textContent = start.matchResult();
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>

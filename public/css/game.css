@@ -1,0 +1,118 @@
+body {
+  position: absolute;
+  width: 1440px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
+
+  background: #9c835f;
+}
+
+.player {
+  float: left;
+}
+
+.player h2 {
+  position: absolute;
+  width: 299px;
+  height: 94px;
+  left: 296px;
+  top: 162px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.com h2 {
+  position: absolute;
+  width: 299px;
+  height: 94px;
+  left: 865px;
+  top: 162px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.p-batu {
+  position: absolute;
+  width: 128px;
+  height: 92px;
+  left: 382px;
+  top: 267px;
+}
+
+.p-kertas {
+  position: absolute;
+  width: 115px;
+  height: 150px;
+  left: 388px;
+  top: 440px;
+}
+
+.p-gunting {
+  position: absolute;
+  width: 134px;
+  height: 160px;
+  left: 369px;
+  top: 671px;
+}
+
+.vs {
+  position: absolute;
+  width: 296px;
+  height: 186px;
+  left: 589px;
+  top: 419px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #bd0000;
+}
+
+.c-batu {
+  position: absolute;
+  width: 128px;
+  height: 92px;
+  left: 951px;
+  top: 267px;
+}
+
+.c-kertas {
+  position: absolute;
+  width: 115px;
+  height: 150px;
+  left: 970px;
+  top: 440px;
+}
+
+.c-gunting {
+  position: absolute;
+  width: 134px;
+  height: 160px;
+  left: 951px;
+  top: 671px;
+}
