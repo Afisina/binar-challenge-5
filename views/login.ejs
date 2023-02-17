@@ -1,10 +1,26 @@
-<!DOCTYPE html>
+<!-- Code ini akan berjalan bila terjadi error -->
+<% if (messages .error) { %>
+<h5><%= messages.error %></h5>
+<% } %>
+<form method="POST" action="/login">
+  <label for="username">Username</label>
+  <br />
+  <input type="text" name="username" placeholder="Insert your username" />
+  <br />
+  <label for="password">Password</label>
+  <br />
+  <input type="password" name="password" placeholder="Insert your password" />
+  <br />
+  <button type="submit">Login</button>
+</form>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="../public/css/login.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
@@ -20,3 +36,4 @@
     </form>
   </body>
 </html>
+ -->
